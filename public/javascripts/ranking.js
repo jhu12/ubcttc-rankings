@@ -1,22 +1,10 @@
 "use strict"
-// Object.defineProperty(exports, "__esModule", { value: true });
-
-// let fs = require('fs');
 
 let emily = new Player("Emily", 6900, 1, null)
 let ata = new Player("Ata", 2000, 2, null);
 let ruchit = new Player("Ruchit", 1000, 3, null);
 let jack = new Player("Jack", 1000, 4, null);
-let players = [emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack];
-
-// const json = JSON.stringify(players);
-
-// fs.writeFile('ranking.js', json, 'utf8', function(err){
-//     if(err){ 
-//           console.log(err); 
-//     } else {
-//           //Everything went OK!
-//     }});
+let players = [emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily];
 
 printRankings();
 
