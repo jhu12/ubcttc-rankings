@@ -9,6 +9,26 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
+const {Pool} = require('pg');
+
+const pool = new Pool({
+ connectionString: "postgres://iggtwjwujexdxz:ba72206bc93afe870b1badc7f1a3c31c03f289ab15a9a54c2f6bf0c855dfd31a@ec2-34-197-84-74.compute-1.amazonaws.com:5432/d5f5nfpk8n8hrq",
+ ssl: {
+ rejectUnauthorized: false
+ }
+});
+
+pool.query(`SELECT * FROM purchases;`, (err, res) => {
+    if (err) {
+        console.log("Error - Failed to select all from Purchases");
+        console.log(err);
+    }
+    else{
+        console.log(res.rows);
+    }
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
