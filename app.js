@@ -7,10 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
-
-
-const {Pool} = require('pg');
+const { Pool } = require('pg')
 
 const pool = new Pool({
  connectionString: "postgres://iggtwjwujexdxz:ba72206bc93afe870b1badc7f1a3c31c03f289ab15a9a54c2f6bf0c855dfd31a@ec2-34-197-84-74.compute-1.amazonaws.com:5432/d5f5nfpk8n8hrq",
@@ -19,15 +16,19 @@ const pool = new Pool({
  }
 });
 
-pool.query(`SELECT * FROM purchases;`, (err, res) => {
+pool.query(`SELECT * FROM Players;`, (err, res) => {
     if (err) {
-        console.log("Error - Failed to select all from Purchases");
+        console.log("Error - Failed to select all from Players");
         console.log(err);
+        document.write("Error - Failed to select all from Players");
+        document.write(err);
     }
     else{
         console.log(res.rows);
     }
 });
+
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

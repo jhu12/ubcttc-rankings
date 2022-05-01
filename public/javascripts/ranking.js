@@ -1,4 +1,4 @@
-"use strict"
+import {Player} from './player.js';
 
 let emily = new Player("Emily", 6900, 1, null)
 let ata = new Player("Ata", 2000, 2, null);

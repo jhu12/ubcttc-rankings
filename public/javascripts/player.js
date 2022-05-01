@@ -6,3 +6,5 @@ class Player {
         this.matches = matches;
     }
 }
+
+export { Player };
