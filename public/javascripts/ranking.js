@@ -1,9 +1,9 @@
 import {Player} from './player.js';
 
-let emily = new Player("Emily", 6900, 1, null)
-let ata = new Player("Ata", 2000, 2, null);
-let ruchit = new Player("Ruchit", 1000, 3, null);
-let jack = new Player("Jack", 1000, 4, null);
+let emily = new Player("Emily", 6900)
+let ata = new Player("Ata", 2000);
+let ruchit = new Player("Ruchit", 1000);
+let jack = new Player("Jack", 1000);
 let players = [emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily];
 
 printRankings();
@@ -31,7 +31,7 @@ function printRankings() {
     for (var i = 0; i < players.length; i++) {
         var row = document.createElement("tr");  
         var cell_rank = document.createElement("td");
-        var cell_rank_value = document.createTextNode(players[i].rank);
+        var cell_rank_value = document.createTextNode(i+1);
         cell_rank.appendChild(cell_rank_value);
         row.appendChild(cell_rank);
         var cell_name = document.createElement("td");

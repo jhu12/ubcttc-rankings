@@ -16,12 +16,10 @@ const pool = new Pool({
  }
 });
 
-pool.query(`SELECT * FROM Players;`, (err, res) => {
+pool.query(`SELECT * FROM players;`, (err, res) => {
     if (err) {
         console.log("Error - Failed to select all from Players");
         console.log(err);
-        document.write("Error - Failed to select all from Players");
-        document.write(err);
     }
     else{
         console.log(res.rows);
@@ -60,3 +58,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+module.exports = pool;
