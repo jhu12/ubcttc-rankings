@@ -6,10 +6,18 @@ let ruchit = new Player("Ruchit", 1000);
 let jack = new Player("Jack", 1000);
 let players = [emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily, ata, ruchit, jack, emily];
 
+var body = document.getElementsByTagName("body")[0];
 printRankings();
+debugByString("Hey");
+
+function debugByString(str) {
+    var test = document.createElement("p");
+    var test_string = document.createTextNode(str);
+    test.appendChild(test_string);
+    body.appendChild(test);
+}
 
 function printRankings() {
-    var body = document.getElementsByTagName("body")[0];  
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
 
